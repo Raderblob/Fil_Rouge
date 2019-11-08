@@ -1,1 +1,9 @@
 Multiplayer Dungeon crawler
+2D (caméra fixe)
+TCP connexion
+UDP pour le reste
+Porgession locale
+donjon fait main + généré aléatoirement
+possibilité d'héberger un serveur
+Langage de prog' : C sharp
+
