@@ -7,16 +7,21 @@ public class Rectangle : Forme
 		largeur = 0.0f;
 		longueur = 0.0f;
 		centre = new Point(0.0f, 0.0f);
+		angle = 0;
 	}
 
-	public Rectangle(float a, float b, Point c)
+	public Rectangle(float a, float b, Point c,float teta)
 	{
 		largeur = a;
 		longueur = b;
 		centre = c;
+		VectDemiLongueur= new Point(b * (float)Math.Cos((Math.PI / 180) * teta) / 2, b * (float)Math.Sin((Math.PI / 180) * teta) / 2);
+		VectDemiLargeur = new Point(-a * (float)Math.Sin((Math.PI / 180) * teta) / 2, a * (float)Math.Cos((Math.PI / 180) * teta) / 2);
+		angle = teta;
+
 	}
 
-	public Rectangle(Point a, Point b)
+	public Rectangle(Point a, Point b, float teta)
 	{
 		float absmax;
 		float ordmax;
@@ -41,6 +46,9 @@ public class Rectangle : Forme
 		longueur = Math.Abs(a.GetAbscissePoint() - b.GetAbscissePoint());
 		largeur = Math.Abs(a.GetOrdonneePoint() - b.GetOrdonneePoint());
 		centre = new Point(absmax - (longueur / 2.0f), ordmax - (largeur / 2.0f));
+		VectDemiLongueur = new Point(longueur * (float)Math.Cos((Math.PI / 180) * teta) / 2, longueur * (float)Math.Sin((Math.PI / 180) * teta) / 2);
+		VectDemiLargeur = new Point(largeur * (float)Math.Sin((Math.PI / 180) * teta) / 2, -largeur * (float)Math.Cos((Math.PI / 180) * teta) / 2);
+		angle = teta;
 
 	}
 
@@ -88,7 +96,9 @@ public class Rectangle : Forme
 		float borneMaxLongueur = centre.GetAbscissePoint() + (longueur / 2.0f);
 		//Console.WriteLine(borneMaxLargeur+" "+borneMinLargeur+ " " + borneMaxLongueur + " " + borneMinLongueur);
 		//a.AfficherPoint();
-		if (a.GetAbscissePoint()>=borneMinLongueur && a.GetAbscissePoint()<=borneMaxLongueur && a.GetOrdonneePoint()>=borneMinLargeur && a.GetOrdonneePoint()<=borneMaxLargeur)
+		Point nouvP = new Point((a.GetAbscissePoint() * (float)Math.Cos((Math.PI / 180) * angle)) - (a.GetOrdonneePoint() * (float)Math.Sin((Math.PI / 180) * angle)), (a.GetAbscissePoint() * (float)Math.Sin((Math.PI / 180) * angle))+ (a.GetOrdonneePoint() * (float)Math.Cos((Math.PI / 180) * angle)));
+		nouvP.AfficherPoint();
+		if (nouvP.GetAbscissePoint()>=borneMinLongueur && nouvP.GetAbscissePoint()<=borneMaxLongueur && nouvP.GetOrdonneePoint()>=borneMinLargeur && nouvP.GetOrdonneePoint()<=borneMaxLargeur)
 		{
 			appart = true;
 		}
@@ -117,16 +127,28 @@ public class Rectangle : Forme
 		}
 		return appart;
 	}
+	public void Rotate(float teta)
+	{
+		angle += teta;
+		VectDemiLongueur = new Point((longueur/2) * (float)Math.Cos((Math.PI / 180) * teta), (longueur/2) * (float)Math.Sin((Math.PI / 180) * teta));
+		VectDemiLargeur = new Point(-(largeur/2) * (float)Math.Sin((Math.PI / 180) * teta), (largeur/2) * (float)Math.Cos((Math.PI / 180) * teta));
+	}
 
 	public void AfficherRectangle()
 	{
 		Console.WriteLine("largeur = " + this.largeur);
 		Console.WriteLine("longueur = " + this.longueur);
 		Console.WriteLine("le centre a pour coordonnées " );
+		Console.WriteLine("Le Rectangle est incliné de " + angle + " degré(s)");
 		centre.AfficherPoint();
+		VectDemiLongueur.AfficherPoint();
+		VectDemiLargeur.AfficherPoint();
 	}
 
-	private float largeur;
-	private float longueur;
-	private Point centre;
+	protected float largeur;
+	protected float longueur;
+	protected Point centre;
+	protected float angle { get; set; }
+	protected Point VectDemiLongueur { get; set; }
+	protected Point VectDemiLargeur { get; set; }
 }

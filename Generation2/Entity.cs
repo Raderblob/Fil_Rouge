@@ -2,21 +2,11 @@
 
 public abstract class Entity
 {
-	protected Point position;
-	protected Point speed;
-	protected bool franchissabilite;
-	protected Forme shape;
-	public Point getPos()
-	{
-		return position;
-	}
-	public Point getSpeed()
-	{
-		return speed;
-	}
-	public bool getFranchissabilite()
-	{
-		return franchissabilite;
-	}
+	protected Point AbsoluteCoordinate { get; set; }
+	protected Point relativeCoordinate { get; set; }
+	protected Point speed { get; set; }
+	protected bool franchissabilite { get; set; }
+	protected Forme shape{ get; set; }
+	
 
 }

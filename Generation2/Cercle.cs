@@ -22,6 +22,7 @@ public class Cercle : Forme
 
 	public float GetrayonCercle()
 	{
+		
 		return this.rayon;
 	}
 

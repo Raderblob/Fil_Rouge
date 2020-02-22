@@ -6,7 +6,7 @@ namespace Generation
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            /*Console.WriteLine("Hello World!");
 
             Point a = new Point(1.0f, 1.0f);
             a.AfficherPoint();
@@ -59,7 +59,20 @@ namespace Generation
 
             Rectangle test = new Rectangle(c, b);
 
-            test.AfficherRectangle();
+            test.AfficherRectangle();*/
+
+            /*Rectangle samuel = new Rectangle(1, 1, new Point(0, 0), 0);
+            samuel.AfficherRectangle();
+            Point Aurelien = new Point(0.5f, 0.5f);
+            Console.WriteLine("Le point appartient au rectangle ? " + samuel.AppartenanceRectangle(Aurelien));
+            samuel.Rotate(45);
+            Console.WriteLine("Le point appartient au rectangle ? " + samuel.AppartenanceRectangle(Aurelien));
+            samuel.AfficherRectangle();*/
+
+            Monde m = new Monde();
+            m.ImageRead(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\Generation2\chefdeuvre.png");
+
+
 
         }
     }

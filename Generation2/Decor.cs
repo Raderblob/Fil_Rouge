@@ -4,28 +4,28 @@ public class Decor : Entity
 {
 	public Decor()
 	{
-		position = new Point(0, 0);
+		relativeCoordinate = new Point(0, 0);
 		speed = new Point(0, 0);
 		franchissabilite = false;
-		shape = new Rectangle(0,0, position);
+		shape = new Rectangle(0,0, relativeCoordinate, 0);
 	}
 
 	public Decor(short type,Point pos,float r,Point vit,bool f)
 	{
-		position = pos;
+		relativeCoordinate = pos;
 		speed = vit;
 		franchissabilite = f;
 		id = type;
-		shape = new Cercle(r, position);
+		shape = new Cercle(r, relativeCoordinate);
 	}
 
-	public Decor(short type, Point pos, float longueur, float largeur,  Point vit, bool f)
+	public Decor(short type, Point pos, float longueur, float largeur,  Point vit, bool f, float teta)
 	{
-		position = pos;
+		relativeCoordinate = pos;
 		speed = vit;
 		franchissabilite = f;
 		id = type;
-		shape = new Rectangle(largeur, longueur, position);
+		shape = new Rectangle(largeur, longueur, relativeCoordinate, teta);
 	}
 
 	public short GetId()

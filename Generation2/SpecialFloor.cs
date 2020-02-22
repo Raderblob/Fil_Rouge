@@ -2,7 +2,7 @@
 
 public class SpecialFloor : Decor
 {
-	public SpecialFloor(float changePV, Point changeV, short type, Point pos, float longueur, float largeur, Point vit, bool f) :base(type, pos, longueur, largeur, vit, f)
+	public SpecialFloor(float changePV, Point changeV, short type, Point pos, float longueur, float largeur, Point vit, bool f, float teta) :base(type, pos, longueur, largeur, vit, f, teta)
 	{
 		changeHP = changePV;
 		changeSpeed = changeV;
