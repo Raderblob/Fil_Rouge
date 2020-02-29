@@ -66,6 +66,10 @@ public class Rectangle : Forme
 	{
 		return this.centre;
 	}
+	public Point getUsefulPoint()
+	{
+		return new Point(this.centre.GetAbscissePoint() - longueur / 2, this.centre.GetOrdonneePoint() - largeur / 2);
+	}
 
 	public void SetLargeurRectangle(float changement)
 	{
@@ -136,13 +140,14 @@ public class Rectangle : Forme
 
 	public void AfficherRectangle()
 	{
-		Console.WriteLine("largeur = " + this.largeur);
+		new Point(centre.GetAbscissePoint() - longueur / 2, centre.GetOrdonneePoint() - largeur / 2).AfficherPoint();
+		
 		Console.WriteLine("longueur = " + this.longueur);
-		Console.WriteLine("le centre a pour coordonnées " );
-		Console.WriteLine("Le Rectangle est incliné de " + angle + " degré(s)");
-		centre.AfficherPoint();
-		VectDemiLongueur.AfficherPoint();
-		VectDemiLargeur.AfficherPoint();
+		Console.WriteLine("largeur = " + this.largeur);
+		//Console.WriteLine("Le Rectangle est incliné de " + angle + " degré(s)");
+		//centre.AfficherPoint();
+		//VectDemiLongueur.AfficherPoint();
+		//VectDemiLargeur.AfficherPoint();
 	}
 
 	protected float largeur;

@@ -40,7 +40,6 @@ public class Point
 	{
 		Console.WriteLine("abcisse = "+this.abscisse);
 		Console.WriteLine("ordonne = "+this.ordonnee);
-		Console.WriteLine("");
 	}
 
 	public float DistancePoint(Point a)

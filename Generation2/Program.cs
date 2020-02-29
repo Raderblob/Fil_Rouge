@@ -69,10 +69,24 @@ namespace Generation
             Console.WriteLine("Le point appartient au rectangle ? " + samuel.AppartenanceRectangle(Aurelien));
             samuel.AfficherRectangle();*/
 
-            Monde m = new Monde();
-            m.ImageRead(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\Generation2\chefdeuvre.png");
 
+            Monde m = new Monde(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\Generation2\index2.txt"); // full adresse : D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\Generation2\
+            //m.ImageRead(@"D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\Generation2\chefdeuvre.png");
+            //m.readLibrary(@"D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\Generation2\index2.txt");
+            string test = "1 2 3 nous irons au bois";
+            CodeRGB chanson = new CodeRGB(test);
+            //chanson.AfficherCodeRGB();
 
+            //m.AfficherIndex();
+
+            m.ImageReadSalle(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\Generation2\salle2.png"); // full adresse : D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\Generation2\
+            m.AfficherFloor();
+            m.fillRoom(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\Generation2\salle_objet.png");
+            //Console.WriteLine(id.CompareTo(id2));
+            //Console.WriteLine(m.GetIndex().ContainsKey(new CodeRGB(2, 2, 3)));
+            //Console.WriteLine(m.GetIndex().ContainsValue("poubelle"));
+            //m.AfficherIndex();
+            //Console.WriteLine(m.GetIndex()[id]);
 
         }
     }
