@@ -2,6 +2,7 @@
 
 public class Couloir
 {
+	//constructeur par défaut
 	public Couloir()
 	{
 	}

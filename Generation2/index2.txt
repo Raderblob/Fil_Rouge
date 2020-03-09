@@ -1,4 +1,4 @@
-15 19 119 mur
+15 19 119 mur 
 2 2 2 poubelle
 208 204 215 gobelin non-binaire
 100 100 100 salle beacon
@@ -6,3 +6,4 @@
 0 0 0 noir
 22 22 22 vide de gimp
 255 105 51 Objet de test
+128 64 0 porte

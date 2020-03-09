@@ -1,7 +1,8 @@
 ﻿using System;
 
-public class Ellipse : Forme
+public class Ellipse : Forme//hérite de la classe forme
 {
+	//constructeur par défaut
 	public Ellipse()
 	{
 		demiGrandAxe = new Point(0, 0);
@@ -9,6 +10,7 @@ public class Ellipse : Forme
 		centre = new Point(0.0f, 0.0f);
 	}
 
+	//constructeur le centre des centres, le demi-grand axe, le demi-petit axe et l'inclinaison
 	public Ellipse(Point c,float dga, float dpa, float teta)
 	{
 		distGa = dga;
@@ -18,6 +20,7 @@ public class Ellipse : Forme
 		centre = c;
 	}
 
+	//fait tourner une ellipse d'un angle teta
 	public void Rotate(float teta)
 	{
 		angle += teta;
@@ -26,7 +29,8 @@ public class Ellipse : Forme
 		
 	}
 
-	public void AfficherEllipse()
+	//afficher les caractéristiques d'une ellipse
+	public override void AfficherForme()
 	{
 		Console.WriteLine("distGa = " + this.distGa);
 		Console.WriteLine("distPa = " + this.distPa);
@@ -37,6 +41,8 @@ public class Ellipse : Forme
 		demiPetitAxe.AfficherPoint();
 	}
 
+
+	//attributs
 	protected float distGa { get; set; }
 	protected float distPa { get; set; }
 	protected Point demiGrandAxe { get; set; }

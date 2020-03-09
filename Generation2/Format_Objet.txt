@@ -1,0 +1,2 @@
+CodeRGB  Name | Type(0=Décor/1=SpecialFloor | id | Forme (0=Rectangle/1=Cercle/2=Ellipse) | longueur | largeur | Franchissabilité | (ChangePV) | (ChangeV) 
+243 25 145  Exemple | 0 | 0 | 0 | 10 | 10 | 0 

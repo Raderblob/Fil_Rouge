@@ -1,7 +1,8 @@
 ﻿using System;
 
-public class Rectangle : Forme
+public class Rectangle : Forme//hérite de la classe forme
 {
+	//constructeur par défaut
 	public Rectangle()
 	{
 		largeur = 0.0f;
@@ -10,6 +11,7 @@ public class Rectangle : Forme
 		angle = 0;
 	}
 
+	//constructeur avec le centre du rectangle, la longueur(abscisse), la largeur(ordonnee) et un angle
 	public Rectangle(float a, float b, Point c,float teta)
 	{
 		largeur = a;
@@ -21,6 +23,7 @@ public class Rectangle : Forme
 
 	}
 
+	//constructeur avec deux points (coins supérieur gauche et inférieur droit) et un angle
 	public Rectangle(Point a, Point b, float teta)
 	{
 		float absmax;
@@ -52,45 +55,60 @@ public class Rectangle : Forme
 
 	}
 
+	//getteur
 	public float GetLargeurRectangle()
 	{
 		return this.largeur;
 	}
 
+	//getteur
 	public float GetLongueurRectangle()
 	{
 		return this.longueur;
 	}
 
+	//getteur
 	public Point GetPointRectangle()
 	{
 		return this.centre;
 	}
+
+	//retorune le point supérieur gauche
 	public Point getUsefulPoint()
 	{
 		return new Point(this.centre.GetAbscissePoint() - longueur / 2, this.centre.GetOrdonneePoint() - largeur / 2);
 	}
 
+	//setteur
 	public void SetLargeurRectangle(float changement)
 	{
 		this.largeur = changement;
 	}
 
+	//setteur
 	public void SetLongueurRectangle(float changement)
 	{
 		this.longueur = changement;
 	}
 
+	//setteur
 	public void SetPointAbscisseRectangle(float changement)
 	{
 		centre.SetAbscissePoint(changement);
 	}
 
+	//setteur
 	public void SetPointOrdonneeRectangle(float changement)
 	{
 		centre.SetOrdonneePoint(changement);
 	}
 
+	public void setPoint(Point p)
+	{
+		this.centre = p;
+	}
+
+	//pertmet de tester l'appartenance d'un point à un rectangle
 	public bool AppartenanceRectangle(Point a)
 	{
 		bool appart = false;
@@ -101,7 +119,7 @@ public class Rectangle : Forme
 		//Console.WriteLine(borneMaxLargeur+" "+borneMinLargeur+ " " + borneMaxLongueur + " " + borneMinLongueur);
 		//a.AfficherPoint();
 		Point nouvP = new Point((a.GetAbscissePoint() * (float)Math.Cos((Math.PI / 180) * angle)) - (a.GetOrdonneePoint() * (float)Math.Sin((Math.PI / 180) * angle)), (a.GetAbscissePoint() * (float)Math.Sin((Math.PI / 180) * angle))+ (a.GetOrdonneePoint() * (float)Math.Cos((Math.PI / 180) * angle)));
-		nouvP.AfficherPoint();
+		//nouvP.AfficherPoint();
 		if (nouvP.GetAbscissePoint()>=borneMinLongueur && nouvP.GetAbscissePoint()<=borneMaxLongueur && nouvP.GetOrdonneePoint()>=borneMinLargeur && nouvP.GetOrdonneePoint()<=borneMaxLargeur)
 		{
 			appart = true;
@@ -109,6 +127,9 @@ public class Rectangle : Forme
 
 		return appart;
 	}
+
+
+	//méthode qui marche pas à modifier
 	public bool AppartenanceRectangle(Rectangle a)
 	{
 		bool appart = false;
@@ -131,6 +152,27 @@ public class Rectangle : Forme
 		}
 		return appart;
 	}
+
+	//permet de tester l'intersection enntre deux rectangles 
+	public bool AppartenanceRectangle2(Rectangle a)
+	{
+		bool appart = false;
+
+		Point supgauche = a.getUsefulPoint();
+		Point supdroit = new Point(supgauche.GetAbscissePoint() + a.GetLongueurRectangle(), supgauche.GetOrdonneePoint());
+		Point infgauche = new Point(supgauche.GetAbscissePoint(), supgauche.GetOrdonneePoint()+a.GetLargeurRectangle());
+		Point infdroit = new Point(supgauche.GetAbscissePoint() + a.GetLongueurRectangle(), supgauche.GetOrdonneePoint() + a.GetLargeurRectangle());
+		//this.AppartenanceRectangle(supgauche);
+		//this.AppartenanceRectangle(infgauche);
+		//this.AppartenanceRectangle(supdroit);
+		//this.AppartenanceRectangle(infdroit);
+
+		appart = this.AppartenanceRectangle(supgauche) || this.AppartenanceRectangle(infgauche)|| this.AppartenanceRectangle(supdroit)|| this.AppartenanceRectangle(infdroit);
+
+		return appart;
+	}
+
+	//fait tourner un rectangle d'un angle teta
 	public void Rotate(float teta)
 	{
 		angle += teta;
@@ -138,9 +180,11 @@ public class Rectangle : Forme
 		VectDemiLargeur = new Point(-(largeur/2) * (float)Math.Sin((Math.PI / 180) * teta), (largeur/2) * (float)Math.Cos((Math.PI / 180) * teta));
 	}
 
-	public void AfficherRectangle()
+	//affichage des caractéristiques du rectangle, hérite d'un méthode AfficherForme de Form, peut être syntaxe incorrecte
+	public override void AfficherForme()
 	{
-		new Point(centre.GetAbscissePoint() - longueur / 2, centre.GetOrdonneePoint() - largeur / 2).AfficherPoint();
+		Console.WriteLine("C'est un rectangle de centre X : "+this.centre.GetAbscissePoint()+" Y :"+this.centre.GetOrdonneePoint());
+		//new Point(centre.GetAbscissePoint() - longueur / 2, centre.GetOrdonneePoint() - largeur / 2).AfficherPoint();
 		
 		Console.WriteLine("longueur = " + this.longueur);
 		Console.WriteLine("largeur = " + this.largeur);
@@ -150,6 +194,8 @@ public class Rectangle : Forme
 		//VectDemiLargeur.AfficherPoint();
 	}
 
+
+	//attributs
 	protected float largeur;
 	protected float longueur;
 	protected Point centre;
