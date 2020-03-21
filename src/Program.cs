@@ -9,13 +9,13 @@ namespace Generation
             
 
 
-            Monde m = new Monde(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\Generation2\index_test_format.txt"); // full adresse : D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\Generation2\
+            Monde m = new Monde(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\FilRouge\index_test_format.txt"); // full adresse : D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\FilRouge\
 
             //m.AfficherIndex();
 
-            m.ImageReadSalle2(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\Generation2\salle_objet_porte.png"); // full adresse : D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\Generation2\
+            m.ImageReadSalle2(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\FilRouge\salle_objet_porte.png"); // full adresse : D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\FilRouge\
             //m.AfficherFloor();
-            m.fillRoom(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\Generation2\salle_objet_porte.png");
+            m.fillRoom(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\FilRouge\salle_objet_porte.png");
 
             /*Console.WriteLine("les salles de l'étage rentrent  en conflits. It's " + m.VerifIntersectionSalles());
 
