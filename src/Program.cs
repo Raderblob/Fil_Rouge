@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Resources;
 
-namespace Generation
+namespace FilRouge
 {
     class Program
     {
@@ -9,13 +10,11 @@ namespace Generation
             
 
 
-            Monde m = new Monde(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\FilRouge\index_test_format.txt"); // full adresse : D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\FilRouge\
-
+            Monde m = new Monde(Properties.Resources.index_test_format);// full adresse : D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\FilRouge\
             //m.AfficherIndex();
-
-            m.ImageReadSalle2(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\FilRouge\salle_objet_porte.png"); // full adresse : D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\FilRouge\
+            m.ImageReadSalle2(Properties.Resources.salle_objet_porte); // full adresse : D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\FilRouge\
             //m.AfficherFloor();
-            m.fillRoom(@"C:\Users\Samuel GUYETANT\Desktop\INSA 3IF\C#\VisualStudioProject\FilRouge\salle_objet_porte.png");
+            m.fillRoom(Properties.Resources.salle_objet_porte);
 
             /*Console.WriteLine("les salles de l'étage rentrent  en conflits. It's " + m.VerifIntersectionSalles());
 

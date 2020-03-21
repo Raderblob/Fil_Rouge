@@ -35,7 +35,8 @@ public class Monde
 		// Example #2
 		// Read each line of the file into a string array. Each element
 		// of the array is one line of the file.
-		string[] lines = System.IO.File.ReadAllLines(name);
+		Console.WriteLine(name);
+		string[] lines = name.Split('\n');
 
 		// Display the file contents by using a foreach loop.
 		//Console.WriteLine("Contents of WriteLines2.txt = ");
@@ -176,9 +177,8 @@ public class Monde
 	}
 
 	//permet d'ajouter des salles avec leur nombre de portes associées dans un monde à partir d'une image
-	public void ImageReadSalle2(string name)
+	public void ImageReadSalle2(Bitmap bitmap)
 	{
-		Bitmap bitmap = new Bitmap(name);
 		int sizeW = bitmap.Width;
 		int sizeH = bitmap.Height;
 		CodeRGB id;
@@ -305,9 +305,8 @@ public class Monde
 	}
 
 	//lit une image précedemment utilisée pour initialiser les salles pour remplir les salles d'objets 
-	public void fillRoom(string name)
+	public void fillRoom(Bitmap image)
 	{
-		Bitmap image = new Bitmap(name);
 		int xStart;
 		int yStart;
 		int width;
