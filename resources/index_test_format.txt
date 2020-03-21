@@ -1,8 +1,0 @@
-15 19 119 mur | 0 | 0 | 0 | 1 | 1 | 0 
-2 2 2 poubelle | 0 | 1 | 1 | 1 | 0 
-208 204 215 gobelin non-binaire | 0 | 0 | 0 | 0 | 0 | 0
-100 100 100 salle beacon
-150 150 150 corner
-22 22 22 vide de gimp
-255 105 51 Objet de test | 0 | 0 | 0 | 10 | 10 | 1 
-128 64 0 porte
