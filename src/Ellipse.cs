@@ -49,4 +49,6 @@ public class Ellipse : Forme//hérite de la classe forme
 	protected Point demiPetitAxe { get; set; }
 	protected Point centre { get; set; }
 	protected float angle { get; set; }
+
+	//comment test
 }
