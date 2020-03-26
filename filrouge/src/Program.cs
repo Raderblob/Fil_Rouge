@@ -9,7 +9,6 @@ namespace FilRouge
         {
             
 
-
             Monde m = new Monde(Properties.Resources.index_test_format);// full adresse : D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\FilRouge\
             //m.AfficherIndex();
             m.ImageReadSalle2(Properties.Resources.salle_objet_porte); // full adresse : D:\Program Files (x86)\VisualStudio\Files\Fil_Rouge\FilRouge\
