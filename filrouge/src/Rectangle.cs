@@ -28,26 +28,26 @@ public class Rectangle : Forme//hérite de la classe forme
 	{
 		float absmax;
 		float ordmax;
-		if(a.GetAbscissePoint()>b.GetAbscissePoint())
+		if(a.getAbscisse()>b.getAbscisse())
 		{
-			absmax = a.GetAbscissePoint();
+			absmax = a.getAbscisse();
 		}
 		else
 		{
-			absmax = b.GetAbscissePoint();
+			absmax = b.getAbscisse();
 		}
 
-		if (a.GetOrdonneePoint() > b.GetOrdonneePoint())
+		if (a.getOrdonnee() > b.getOrdonnee())
 		{
-			ordmax = a.GetOrdonneePoint();
+			ordmax = a.getOrdonnee();
 		}
 		else
 		{
-			ordmax = b.GetOrdonneePoint();
+			ordmax = b.getOrdonnee();
 		}
 
-		longueur = Math.Abs(a.GetAbscissePoint() - b.GetAbscissePoint());
-		largeur = Math.Abs(a.GetOrdonneePoint() - b.GetOrdonneePoint());
+		longueur = Math.Abs(a.getAbscisse() - b.getAbscisse());
+		largeur = Math.Abs(a.getOrdonnee() - b.getOrdonnee());
 		centre = new Point(absmax - (longueur / 2.0f), ordmax - (largeur / 2.0f));
 		VectDemiLongueur = new Point(longueur * (float)Math.Cos((Math.PI / 180) * teta) / 2, longueur * (float)Math.Sin((Math.PI / 180) * teta) / 2);
 		VectDemiLargeur = new Point(largeur * (float)Math.Sin((Math.PI / 180) * teta) / 2, -largeur * (float)Math.Cos((Math.PI / 180) * teta) / 2);
@@ -76,7 +76,7 @@ public class Rectangle : Forme//hérite de la classe forme
 	//retorune le point supérieur gauche
 	public Point getUsefulPoint()
 	{
-		return new Point(this.centre.GetAbscissePoint() - longueur / 2, this.centre.GetOrdonneePoint() - largeur / 2);
+		return new Point(this.centre.getAbscisse() - longueur / 2, this.centre.getOrdonnee() - largeur / 2);
 	}
 
 	//setteur
@@ -94,13 +94,13 @@ public class Rectangle : Forme//hérite de la classe forme
 	//setteur
 	public void SetPointAbscisseRectangle(float changement)
 	{
-		centre.SetAbscissePoint(changement);
+		centre.setAbscisse(changement);
 	}
 
 	//setteur
 	public void SetPointOrdonneeRectangle(float changement)
 	{
-		centre.SetOrdonneePoint(changement);
+		centre.setOrdonnee(changement);
 	}
 
 	public void setPoint(Point p)
@@ -112,15 +112,15 @@ public class Rectangle : Forme//hérite de la classe forme
 	public bool AppartenanceRectangle(Point a)
 	{
 		bool appart = false;
-		float borneMinLargeur=centre.GetOrdonneePoint() - ( largeur /2.0f);
-		float borneMaxLargeur = centre.GetOrdonneePoint() + (largeur / 2.0f);
-		float borneMinLongueur = centre.GetAbscissePoint() - (longueur / 2.0f);
-		float borneMaxLongueur = centre.GetAbscissePoint() + (longueur / 2.0f);
+		float borneMinLargeur=centre.getOrdonnee() - ( largeur /2.0f);
+		float borneMaxLargeur = centre.getOrdonnee() + (largeur / 2.0f);
+		float borneMinLongueur = centre.getAbscisse() - (longueur / 2.0f);
+		float borneMaxLongueur = centre.getAbscisse() + (longueur / 2.0f);
 		//Console.WriteLine(borneMaxLargeur+" "+borneMinLargeur+ " " + borneMaxLongueur + " " + borneMinLongueur);
 		//a.AfficherPoint();
-		Point nouvP = new Point((a.GetAbscissePoint() * (float)Math.Cos((Math.PI / 180) * angle)) - (a.GetOrdonneePoint() * (float)Math.Sin((Math.PI / 180) * angle)), (a.GetAbscissePoint() * (float)Math.Sin((Math.PI / 180) * angle))+ (a.GetOrdonneePoint() * (float)Math.Cos((Math.PI / 180) * angle)));
+		Point nouvP = new Point((a.getAbscisse() * (float)Math.Cos((Math.PI / 180) * angle)) - (a.getOrdonnee() * (float)Math.Sin((Math.PI / 180) * angle)), (a.getAbscisse() * (float)Math.Sin((Math.PI / 180) * angle))+ (a.getOrdonnee() * (float)Math.Cos((Math.PI / 180) * angle)));
 		//nouvP.AfficherPoint();
-		if (nouvP.GetAbscissePoint()>=borneMinLongueur && nouvP.GetAbscissePoint()<=borneMaxLongueur && nouvP.GetOrdonneePoint()>=borneMinLargeur && nouvP.GetOrdonneePoint()<=borneMaxLargeur)
+		if (nouvP.getAbscisse()>=borneMinLongueur && nouvP.getAbscisse()<=borneMaxLongueur && nouvP.getOrdonnee()>=borneMinLargeur && nouvP.getOrdonnee()<=borneMaxLargeur)
 		{
 			appart = true;
 		}
@@ -133,14 +133,14 @@ public class Rectangle : Forme//hérite de la classe forme
 	public bool AppartenanceRectangle(Rectangle a)
 	{
 		bool appart = false;
-		float borneMinLargeur = centre.GetOrdonneePoint() - (largeur / 2.0f);
-		float borneMaxLargeur = centre.GetOrdonneePoint() + (largeur / 2.0f);
-		float borneMinLongueur = centre.GetAbscissePoint() - (longueur / 2.0f);
-		float borneMaxLongueur = centre.GetAbscissePoint() + (longueur / 2.0f);
-		float borneMinLargeur2 = a.centre.GetOrdonneePoint() - (largeur / 2.0f);
-		float borneMaxLargeur2 = a.centre.GetOrdonneePoint() + (largeur / 2.0f);
-		float borneMinLongueur2 = a.centre.GetAbscissePoint() - (longueur / 2.0f);
-		float borneMaxLongueur2 = a.centre.GetAbscissePoint() + (longueur / 2.0f);
+		float borneMinLargeur = centre.getOrdonnee() - (largeur / 2.0f);
+		float borneMaxLargeur = centre.getOrdonnee() + (largeur / 2.0f);
+		float borneMinLongueur = centre.getAbscisse() - (longueur / 2.0f);
+		float borneMaxLongueur = centre.getAbscisse() + (longueur / 2.0f);
+		float borneMinLargeur2 = a.centre.getOrdonnee() - (largeur / 2.0f);
+		float borneMaxLargeur2 = a.centre.getOrdonnee() + (largeur / 2.0f);
+		float borneMinLongueur2 = a.centre.getAbscisse() - (longueur / 2.0f);
+		float borneMaxLongueur2 = a.centre.getAbscisse() + (longueur / 2.0f);
 		if (((borneMaxLongueur2 <= borneMinLongueur) || (borneMaxLongueur <= borneMinLongueur2))
 		 || ((borneMaxLargeur2 <= borneMinLargeur) || (borneMaxLargeur <= borneMinLargeur2)))
 		{
@@ -159,9 +159,9 @@ public class Rectangle : Forme//hérite de la classe forme
 		bool appart = false;
 
 		Point supgauche = a.getUsefulPoint();
-		Point supdroit = new Point(supgauche.GetAbscissePoint() + a.GetLongueurRectangle(), supgauche.GetOrdonneePoint());
-		Point infgauche = new Point(supgauche.GetAbscissePoint(), supgauche.GetOrdonneePoint()+a.GetLargeurRectangle());
-		Point infdroit = new Point(supgauche.GetAbscissePoint() + a.GetLongueurRectangle(), supgauche.GetOrdonneePoint() + a.GetLargeurRectangle());
+		Point supdroit = new Point(supgauche.getAbscisse() + a.GetLongueurRectangle(), supgauche.getOrdonnee());
+		Point infgauche = new Point(supgauche.getAbscisse(), supgauche.getOrdonnee()+a.GetLargeurRectangle());
+		Point infdroit = new Point(supgauche.getAbscisse() + a.GetLongueurRectangle(), supgauche.getOrdonnee() + a.GetLargeurRectangle());
 		//this.AppartenanceRectangle(supgauche);
 		//this.AppartenanceRectangle(infgauche);
 		//this.AppartenanceRectangle(supdroit);
@@ -183,8 +183,8 @@ public class Rectangle : Forme//hérite de la classe forme
 	//affichage des caractéristiques du rectangle, hérite d'un méthode AfficherForme de Form, peut être syntaxe incorrecte
 	public override void AfficherForme()
 	{
-		Console.WriteLine("C'est un rectangle de centre X : "+this.centre.GetAbscissePoint()+" Y :"+this.centre.GetOrdonneePoint());
-		//new Point(centre.GetAbscissePoint() - longueur / 2, centre.GetOrdonneePoint() - largeur / 2).AfficherPoint();
+		Console.WriteLine("C'est un rectangle de centre X : "+this.centre.getAbscisse()+" Y :"+this.centre.getOrdonnee());
+		//new Point(centre.GetAbscisse() - longueur / 2, centre.GetOrdonneePoint() - largeur / 2).AfficherPoint();
 		
 		Console.WriteLine("longueur = " + this.longueur);
 		Console.WriteLine("largeur = " + this.largeur);

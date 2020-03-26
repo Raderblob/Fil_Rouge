@@ -116,28 +116,28 @@ public class Salle
 		float largeur = contour.GetLargeurRectangle() / 2;
 
 		//initialisation du chunk haut gauche
-		Point centreChunk = new Point(centre.GetAbscissePoint()-(longueur/2),centre.GetOrdonneePoint()-(largeur/2));
+		Point centreChunk = new Point(centre.getAbscisse()-(longueur/2),centre.getOrdonnee()-(largeur/2));
 		Chunk transi = new Chunk(new Rectangle(largeur, longueur, centreChunk, 0), new List<Decor> { });
 		Point cle = new Point(0, 0);
 
 		chunk_list.Add(cle, transi);
 
 		//initialisation du chunk haut droit
-		centreChunk = new Point(centre.GetAbscissePoint() + (longueur / 2), centre.GetOrdonneePoint() - (largeur / 2));
+		centreChunk = new Point(centre.getAbscisse() + (longueur / 2), centre.getOrdonnee() - (largeur / 2));
 		transi = new Chunk(new Rectangle(largeur, longueur, centreChunk, 0), new List<Decor> { });
 		cle = new Point(1, 0);
 
 		chunk_list.Add(cle, transi);
 
 		//initialisation du chunk bas gauche
-		centreChunk = new Point(centre.GetAbscissePoint() - (longueur / 2), centre.GetOrdonneePoint() + (largeur / 2));
+		centreChunk = new Point(centre.getAbscisse() - (longueur / 2), centre.getOrdonnee() + (largeur / 2));
 		transi = new Chunk(new Rectangle(largeur, longueur, centreChunk, 0), new List<Decor> { });
 		cle = new Point(0, 1);
 
 		chunk_list.Add(cle, transi);
 
 		//initialisation du chunk bas droit
-		centreChunk = new Point(centre.GetAbscissePoint() + (longueur / 2), centre.GetOrdonneePoint() + (largeur / 2));
+		centreChunk = new Point(centre.getAbscisse() + (longueur / 2), centre.getOrdonnee() + (largeur / 2));
 		transi = new Chunk(new Rectangle(largeur, longueur, centreChunk, 0), new List<Decor> { });
 		cle = new Point(1, 1);
 

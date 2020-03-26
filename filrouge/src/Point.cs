@@ -17,25 +17,25 @@ public class Point
 	}
 
 	//getteur
-	public float GetAbscissePoint()
+	public float getAbscisse()
 	{
 		return this.abscisse;
 	}
 
 	//getteur
-	public float GetOrdonneePoint()
+	public float getOrdonnee()
 	{
 		return this.ordonnee;
 	}
 
 	//setteur
-	public void SetAbscissePoint(float changement)
+	public void setAbscisse(float changement)
 	{
 		this.abscisse = changement;
 	}
 
 	//setteur
-	public void SetOrdonneePoint(float changement)
+	public void setOrdonnee(float changement)
 	{
 		this.ordonnee = changement;
 	}
@@ -50,7 +50,7 @@ public class Point
 	//calcule la distance euclidienne entre deux points
 	public float DistancePoint(Point a)
 	{
-		float dist =(float)Math.Pow(a.GetAbscissePoint() - abscisse, 2) + (float)Math.Pow(a.GetOrdonneePoint() - ordonnee,2);
+		float dist =(float)Math.Pow(a.getAbscisse() - abscisse, 2) + (float)Math.Pow(a.getOrdonnee() - ordonnee,2);
 		return dist;
 	}
 

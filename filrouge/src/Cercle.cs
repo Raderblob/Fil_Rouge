@@ -45,13 +45,13 @@ public class Cercle : Forme//hérite de la classe forme
 	//setteur
 	public void SetPointAbscisseCercle(float changement)
 	{
-		centre.SetAbscissePoint(changement);
+		centre.setAbscisse(changement);
 	}
 
 	//setteur
 	public void SetPointOrdonneeCercle(float changement)
 	{
-		centre.SetOrdonneePoint(changement);
+		centre.setOrdonnee(changement);
 	}
 
 	//teste l'appartenance d'un point à un cercle

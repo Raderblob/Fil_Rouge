@@ -75,8 +75,8 @@ public class Personnage : Entity//hérite de la classe entity
 	public Point CalculateRelCoord(Point absCoord, float abssalle,float ordsalle)
 	{
 		
-		float abscisse = absCoord.GetAbscissePoint();
-		float ordonnee = absCoord.GetOrdonneePoint();
+		float abscisse = absCoord.getAbscisse();
+		float ordonnee = absCoord.getOrdonnee();
 		Point relCoord=new Point (abscisse-abssalle, ordonnee-ordsalle);
 		return relCoord;
 	}
@@ -85,10 +85,10 @@ public class Personnage : Entity//hérite de la classe entity
 	public void CalculateRelCoord(Point absCoord, Point sommetsupgauche)
 	{
 
-		float abscisse = absCoord.GetAbscissePoint();
-		float ordonnee = absCoord.GetOrdonneePoint();
-		float abssupgauche = sommetsupgauche.GetAbscissePoint();
-		float ordsupgauche = sommetsupgauche.GetOrdonneePoint();
+		float abscisse = absCoord.getAbscisse();
+		float ordonnee = absCoord.getOrdonnee();
+		float abssupgauche = sommetsupgauche.getAbscisse();
+		float ordsupgauche = sommetsupgauche.getOrdonnee();
 		relativeCoordinate = new Point(abscisse - abssupgauche, ordonnee - ordsupgauche);
 	}
 
@@ -96,12 +96,12 @@ public class Personnage : Entity//hérite de la classe entity
 	//getteur
 	public float GetAbscissePerso()
 	{
-		return AbsoluteCoordinate.GetAbscissePoint();
+		return AbsoluteCoordinate.getAbscisse();
 	}
 	//getteur
 	public float GetOrdonneePerso()
 	{
-		return AbsoluteCoordinate.GetOrdonneePoint();
+		return AbsoluteCoordinate.getOrdonnee();
 	}
 	//getteur
 	public Point GetAbsCoord()

@@ -320,8 +320,8 @@ public class Monde
 			//Console.WriteLine("Parcours de la salle n°" + room.getId_salle());
 			width = (int)room.getContour().GetLongueurRectangle();
 			height = (int)room.getContour().GetLargeurRectangle();
-			xStart = (int)room.getContour().getUsefulPoint().GetAbscissePoint();
-			yStart = (int)room.getContour().getUsefulPoint().GetOrdonneePoint();
+			xStart = (int)room.getContour().getUsefulPoint().getAbscisse();
+			yStart = (int)room.getContour().getUsefulPoint().getOrdonnee();
 			for (int i = 1; i < height; i++)
 			{
 				for (int j = 1; j < width; j++)
@@ -482,7 +482,7 @@ public class Monde
 		{
 			if(room.getId_salle()==idsalle)
 			{
-				if (room.getContour().getUsefulPoint().GetAbscissePoint()<=johnDoe.GetAbscissePerso() && room.getContour().getUsefulPoint().GetOrdonneePoint()<=johnDoe.GetOrdonneePerso()&& room.getContour().getUsefulPoint().GetAbscissePoint()+room.getContour().GetLongueurRectangle() >= johnDoe.GetAbscissePerso() && room.getContour().getUsefulPoint().GetOrdonneePoint() + room.getContour().GetLargeurRectangle() >= johnDoe.GetOrdonneePerso())
+				if (room.getContour().getUsefulPoint().getAbscisse()<=johnDoe.GetAbscissePerso() && room.getContour().getUsefulPoint().getOrdonnee()<=johnDoe.GetOrdonneePerso()&& room.getContour().getUsefulPoint().getAbscisse()+room.getContour().GetLongueurRectangle() >= johnDoe.GetAbscissePerso() && room.getContour().getUsefulPoint().getOrdonnee() + room.getContour().GetLargeurRectangle() >= johnDoe.GetOrdonneePerso())
 				{
 					Console.WriteLine("Le personnage ");
 					johnDoe.AfficherPersonnage();
