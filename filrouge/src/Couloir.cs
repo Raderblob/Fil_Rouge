@@ -1,9 +1,12 @@
 ﻿using System;
 
-public class Couloir
+namespace FilRouge
 {
-	//constructeur par défaut
-	public Couloir()
+	public class Couloir
 	{
+		//constructeur par défaut
+		public Couloir()
+		{
+		}
 	}
 }

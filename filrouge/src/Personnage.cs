@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FilRouge;
+using System;
 
 public class Personnage : Entity//hérite de la classe entity
 {

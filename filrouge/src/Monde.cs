@@ -1,6 +1,9 @@
-﻿using System;
+﻿using FilRouge;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
+using Point = FilRouge.Point;
+using Rectangle = FilRouge.Rectangle;
 
 public class Monde
 {

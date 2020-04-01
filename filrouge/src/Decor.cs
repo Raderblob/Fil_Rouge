@@ -1,69 +1,72 @@
 ﻿using System;
 
-public class Decor : Entity//hérite de la classe entity
+namespace FilRouge
 {
-	//constructeur par défaut
-	public Decor()
+	public class Decor : Entity//hérite de la classe entity
 	{
-		relativeCoordinate = new Point(0, 0);
-		speed = new Point(0, 0);
-		franchissabilite = false;
-		shape = new Rectangle(0,0, relativeCoordinate, 0);
-		name = "test";
-	}
+		//constructeur par défaut
+		public Decor()
+		{
+			relativeCoordinate = new Point(0, 0);
+			speed = new Point(0, 0);
+			franchissabilite = false;
+			shape = new Rectangle(0, 0, relativeCoordinate, 0);
+			name = "test";
+		}
 
-	//constructeur qui initialise un décor de forme sphérique
-	public Decor(string nom, short type,Point pos,float r,Point vit,bool f)
-	{
-		relativeCoordinate = pos;
-		speed = vit;
-		franchissabilite = f;
-		id = type;
-		shape = new Cercle(r, relativeCoordinate);
-		name = nom;
-	}
+		//constructeur qui initialise un décor de forme sphérique
+		public Decor(string nom, short type, Point pos, float r, Point vit, bool f)
+		{
+			relativeCoordinate = pos;
+			speed = vit;
+			franchissabilite = f;
+			id = type;
+			shape = new Cercle(r, relativeCoordinate);
+			name = nom;
+		}
 
-	//constrcteur qui initialise un décor de forme rectangulaire
-	public Decor(string nom, short type, Point pos, float longueur, float largeur,  Point vit, bool f, float teta)
-	{
-		relativeCoordinate = pos;
-		speed = vit;
-		franchissabilite = f;
-		id = type;
-		shape = new Rectangle(largeur, longueur, relativeCoordinate, teta);
-		name = nom;
-	}
+		//constrcteur qui initialise un décor de forme rectangulaire
+		public Decor(string nom, short type, Point pos, float longueur, float largeur, Point vit, bool f, float teta)
+		{
+			relativeCoordinate = pos;
+			speed = vit;
+			franchissabilite = f;
+			id = type;
+			shape = new Rectangle(largeur, longueur, relativeCoordinate, teta);
+			name = nom;
+		}
 
-	//getteur
-	public short GetId()
-	{
-		return this.id;
-	}
+		//getteur
+		public short GetId()
+		{
+			return id;
+		}
 
-	//setteur
-	public void SetId(short changement)
-	{
-		this.id = changement;
-	}
+		//setteur
+		public void SetId(short changement)
+		{
+			id = changement;
+		}
 
-	//permet d'afficher les caractéristiques d'un décor
-	public void AfficherDecor()
-	{
-		Console.WriteLine("--------------------------------");
-		Console.WriteLine("Le décor ID : " + id + " : " + name + " .");
-		Console.WriteLine("Ses coordonées absolues sont ");
-		this.AbsoluteCoordinate.AfficherPoint(); 
-		Console.WriteLine(" et ses coordonnées relatives sont ");
-		this.relativeCoordinate.AfficherPoint();
-		this.shape.AfficherForme();
-		//Console.WriteLine("Sa vitesse est de ");
-		//this.speed.AfficherPoint();
-		Console.WriteLine(" et sa franchissabilité est de " + franchissabilite + " .");
-		Console.WriteLine("--------------------------------");
-		return;
-	}
+		//permet d'afficher les caractéristiques d'un décor
+		public void AfficherDecor()
+		{
+			Console.WriteLine("--------------------------------");
+			Console.WriteLine("Le décor ID : " + id + " : " + name + " .");
+			Console.WriteLine("Ses coordonées absolues sont ");
+			AbsoluteCoordinate.AfficherPoint();
+			Console.WriteLine(" et ses coordonnées relatives sont ");
+			relativeCoordinate.AfficherPoint();
+			shape.AfficherForme();
+			//Console.WriteLine("Sa vitesse est de ");
+			//this.speed.AfficherPoint();
+			Console.WriteLine(" et sa franchissabilité est de " + franchissabilite + " .");
+			Console.WriteLine("--------------------------------");
+			return;
+		}
 
-	//attributs
-	protected short id;
-	//protected int id_salle;
+		//attributs
+		protected short id;
+		//protected int id_salle;
+	}
 }
