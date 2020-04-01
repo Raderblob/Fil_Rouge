@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FilRouge
+namespace FilRouge.src.shape
 {
 	public class Ellipse : Shape//hérite de la classe forme
 	{
