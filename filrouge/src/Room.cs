@@ -1,12 +1,14 @@
-﻿using System;
+﻿using FilRouge.src.Entity;
+using FilRouge.src.shape;
+using System;
 using System.Collections.Generic;
 
 namespace FilRouge
 {
-	public class Salle
+	public class Room
 	{
 		//constructeur par défaut
-		public Salle()
+		public Room()
 		{
 			contour = new Rectangle(50, 50, new Point(50, 50), 0);
 			nbSorties = 2;
@@ -17,7 +19,7 @@ namespace FilRouge
 		}
 
 		//constructeur avec un identifiant, le point supérieur gauche et le point inférieur droit
-		public Salle(int id, Point beacon, Point corner)
+		public Room(int id, Point beacon, Point corner)
 		{
 			id_salle = id;
 			nbSorties = 1;
@@ -29,7 +31,7 @@ namespace FilRouge
 		}
 
 		//constructeur avec un identifiant, le point supérieur gauche, le point inférieur droit et le nb de sorties
-		public Salle(int id, Point beacon, Point corner, int nbexit)
+		public Room(int id, Point beacon, Point corner, int nbexit)
 		{
 			id_salle = id;
 			nbSorties = nbexit;

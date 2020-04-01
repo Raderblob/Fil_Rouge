@@ -1,5 +1,7 @@
-﻿using System;
-namespace FilRouge
+﻿using FilRouge.src.physics;
+using FilRouge.src.shape;
+using System;
+namespace FilRouge.src.Entity
 {
 	public abstract class Entity//classe abstraite entite
 	{
@@ -16,5 +18,6 @@ namespace FilRouge
 		protected bool franchissabilite { get; set; }
 		protected Shape shape { get; set; }
 		protected string name { get; set; }
+		protected Body body { get; set; }
 	}
 }

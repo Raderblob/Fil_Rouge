@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using FilRouge.src.physics;
 
-namespace FilRouge
+namespace FilRouge.src.shape
 {
 	public abstract class Shape//cladse abstraite forme
 	{

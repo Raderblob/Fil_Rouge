@@ -2,10 +2,10 @@
 
 namespace FilRouge
 {
-	public class CodeRGB : IComparable
+	public class RGBCode : IComparable
 	{
 		//constructeur par défaut
-		public CodeRGB()
+		public RGBCode()
 		{
 			red = 0;
 			green = 0;
@@ -13,7 +13,7 @@ namespace FilRouge
 		}
 
 		//constructeur avec un nom de fichier
-		public CodeRGB(string name)
+		public RGBCode(string name)
 		{
 			//Console.WriteLine(name);
 			string transi;
@@ -47,7 +47,7 @@ namespace FilRouge
 		}
 
 		//constructeur avec les valeurs des intensités de rouge, vert et bleu
-		public CodeRGB(int r, int g, int b)
+		public RGBCode(int r, int g, int b)
 		{
 			red = r;
 			green = g;
@@ -59,7 +59,7 @@ namespace FilRouge
 		{
 			if (obj == null) return 1;
 
-			CodeRGB otherCode = obj as CodeRGB;
+			RGBCode otherCode = obj as RGBCode;
 			if (otherCode != null)
 				if (red != otherCode.red)
 				{
@@ -89,7 +89,7 @@ namespace FilRouge
 		//permet d'implémenter la comparaison entre deux objets rbg
 		public override bool Equals(object obj)
 		{
-			CodeRGB other = obj as CodeRGB;
+			RGBCode other = obj as RGBCode;
 			return other != null && other.red == red && other.green == green && other.blue == blue;
 		}
 

@@ -1,25 +1,25 @@
 ﻿using System;
 
-namespace FilRouge
+namespace FilRouge.src.shape
 {
-	public class Cercle : Shape//hérite de la classe forme
+	public class Circle : Shape//hérite de la classe forme
 	{
 		//constructeur par défaut
-		public Cercle()
+		public Circle()
 		{
-			rayon = 0.0f;
-			centre = new Point(0.0f, 0.0f);
+			radius = 0.0f;
+			center = new Point(0.0f, 0.0f);
 		}
 
 		//constructeur avec rayon et centre
-		public Cercle(float r, Point c)
+		public Circle(float r, Point c)
 		{
-			rayon = r;
-			centre = c;
+			radius = r;
+			center = c;
 		}
 
 		//constructeur avec deux points
-		public Cercle(Point a, Point b)
+		public Circle(Point a, Point b)
 		{
 			//A completer
 
@@ -29,39 +29,39 @@ namespace FilRouge
 		public float GetrayonCercle()
 		{
 
-			return rayon;
+			return radius;
 		}
 
 		//getteur
 		public Point GetPointCercle()
 		{
-			return centre;
+			return center;
 		}
 
 		//setteur
 		public void SetrayonCercle(float changement)
 		{
-			rayon = changement;
+			radius = changement;
 		}
 
 		//setteur
 		public void SetPointAbscisseCercle(float changement)
 		{
-			centre.setAbscisse(changement);
+			center.setAbscisse(changement);
 		}
 
 		//setteur
 		public void SetPointOrdonneeCercle(float changement)
 		{
-			centre.setOrdonnee(changement);
+			center.setOrdonnee(changement);
 		}
 
 		//teste l'appartenance d'un point à un cercle
 		public bool AppartenanceCercle(Point a)
 		{
 			bool appart = false;
-			float distance = centre.DistancePoint(a);
-			if (distance <= Math.Pow(rayon, 2))
+			float distance = center.DistancePoint(a);
+			if (distance <= Math.Pow(radius, 2))
 			{
 				appart = true;
 			}
@@ -71,11 +71,11 @@ namespace FilRouge
 		}
 
 		//teste l'intersection entre deux cercles
-		public bool AppartenanceCercle(Cercle c)
+		public bool AppartenanceCercle(Circle c)
 		{
 			bool appart = false;
-			float dist = centre.DistancePoint(c.centre);
-			if (dist <= Math.Pow(rayon + c.rayon, 2))
+			float dist = center.DistancePoint(c.center);
+			if (dist <= Math.Pow(radius + c.radius, 2))
 			{
 				appart = true;
 			}
@@ -85,13 +85,13 @@ namespace FilRouge
 		//affichage des caractéristiques du cercle, hérite d'un méthode AfficherForme de Form, peut être syntaxe incorrecte
 		public override void AfficherForme()
 		{
-			Console.WriteLine("rayon = " + rayon);
+			Console.WriteLine("rayon = " + radius);
 			Console.WriteLine("le centre a pour coordonnées ");
-			centre.AfficherPoint();
+			center.AfficherPoint();
 		}
 
 		//attributs
-		private float rayon;
-		private Point centre;
+		private float radius;
+		private Point center;
 	}
 }

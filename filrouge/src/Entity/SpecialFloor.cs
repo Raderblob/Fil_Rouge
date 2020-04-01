@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FilRouge
+namespace FilRouge.src.Entity
 {
 	public class SpecialFloor : Decor//hérite de la classe décor
 	{

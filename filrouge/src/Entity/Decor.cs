@@ -1,6 +1,7 @@
-﻿using System;
+﻿using FilRouge.src.shape;
+using System;
 
-namespace FilRouge
+namespace FilRouge.src.Entity
 {
 	public class Decor : Entity//hérite de la classe entity
 	{
@@ -21,7 +22,7 @@ namespace FilRouge
 			speed = vit;
 			franchissabilite = f;
 			id = type;
-			shape = new Cercle(r, relativeCoordinate);
+			shape = new Circle(r, relativeCoordinate);
 			name = nom;
 		}
 

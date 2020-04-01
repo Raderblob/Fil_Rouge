@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FilRouge.src.Entity;
+using FilRouge.src.shape;
+using System;
 using System.Collections.Generic;
 
 namespace FilRouge
